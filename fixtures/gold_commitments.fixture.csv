@@ -1,0 +1,9 @@
+source_event_ids,direction,statement,person,due_date,due_date_quality,commitment_strength,should_surface,notes
+f487b789a16257636bd38b6a42bb34b2,i_owe,Send Sam the pricing deck,Sam,2026-06-05,explicit,hard,true,
+f487b789a16257636bd38b6a42bb34b2,i_owe,Review the contract redlines and get back to Sam,Sam,,vague,soft,true,soft commitment with no date
+dfe44404edb3cc06992d77ce35cca9a7,i_owe,Make the intro to the design team for Priya,Priya,2026-06-03,relative,hard,true,
+f8180dd579a32ce812ad82bb01c21c73,owed_to_me,Sarah will send the Q3 numbers,Sarah,2026-06-04,relative,hard,true,inbound promise to the user
+971774c53f53ec83201d9c60d5509fce,i_owe,Review the Q3 numbers and send Sarah feedback,Sarah,2026-06-08,explicit,hard,true,
+528442d85acd2f4c19a4d0181a452dc1,i_owe,Check the budget tab for Sarah,Sarah,2026-06-03,relative,hard,true,accepted request becomes an outbound commitment
+6bb9e34bd014610f3a71471a6598d8b1,i_owe,Draft the partnership proposal and share it with the team,the team,,relative,hard,true,
+e84eab3c36022158b7571b6c7c987dbc,owed_to_me,Jordan will set up the demo environment,Jordan,,vague,hard,true,inbound promise to the user

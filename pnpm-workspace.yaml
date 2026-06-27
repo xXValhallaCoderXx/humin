@@ -1,0 +1,4 @@
+# pnpm 11 reads package settings from here (no longer from the "pnpm" field in package.json).
+# tsx bundles its own esbuild, so esbuild's native build script is intentionally not run.
+allowBuilds:
+  esbuild: false

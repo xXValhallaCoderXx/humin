@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Real founder data + all generated artifacts (sensitive — never commit)
+data/
+
+# Secrets
+.env
+
+# Logs / build
+*.log
+dist/

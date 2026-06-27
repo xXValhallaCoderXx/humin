@@ -1,0 +1,50 @@
+{
+  "name": "Sarah Lin",
+  "type": "personal_chat",
+  "id": 778899,
+  "messages": [
+    {
+      "id": 1,
+      "type": "message",
+      "date": "2026-06-03T10:00:00",
+      "date_unixtime": "1780480800",
+      "from": "Sarah Lin",
+      "from_id": "user778899",
+      "text": "Hey! I'll get you the Q3 numbers tomorrow."
+    },
+    {
+      "id": 2,
+      "type": "message",
+      "date": "2026-06-03T10:05:00",
+      "date_unixtime": "1780481100",
+      "from": "Founder",
+      "from_id": "user111",
+      "text": "Thanks Sarah. I'll review them and send feedback by Monday."
+    },
+    {
+      "id": 3,
+      "type": "message",
+      "date": "2026-06-03T10:06:00",
+      "date_unixtime": "1780481160",
+      "from": "Sarah Lin",
+      "from_id": "user778899",
+      "text": "Can you also check the budget tab when you get a chance?"
+    },
+    {
+      "id": 4,
+      "type": "message",
+      "date": "2026-06-03T10:07:00",
+      "date_unixtime": "1780481220",
+      "from": "Founder",
+      "from_id": "user111",
+      "text": "Sure, I'll check the budget tab tonight."
+    },
+    {
+      "id": 5,
+      "type": "service",
+      "date": "2026-06-03T10:08:00",
+      "date_unixtime": "1780481280",
+      "text": "pinned a message"
+    }
+  ]
+}
