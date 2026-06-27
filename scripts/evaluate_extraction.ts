@@ -11,6 +11,7 @@ import { CAPTURE_EVENTS, GOLD_CSV, PREDICTIONS_DIR, REPORTS_DIR } from "../src/p
 import { matchAll } from "../src/evaluate/match.ts";
 import { computeMetrics, type ThresholdResult } from "../src/evaluate/metrics.ts";
 import { renderReport } from "../src/evaluate/report.ts";
+import { renderMissesCsv } from "../src/evaluate/recall.ts";
 import type { PredictionRun } from "../src/types.ts";
 
 loadEnv();
@@ -65,6 +66,15 @@ const { markdown, verdict } = renderReport({
 const outPath = optStr(args, "out") ?? `${REPORTS_DIR}/metrics.${run.prompt_version}.md`;
 mkdirSync(REPORTS_DIR, { recursive: true });
 writeFileSync(outPath, markdown);
+
+// Recall-analysis export: one CSV row per gold commitment with outcome + segments.
+if (args["dump-misses"]) {
+  const r0 = results.find((r) => r.metrics.confidence_threshold === 0) ?? computeMetrics(run.predictions, rawMatches, gold, events, 0);
+  const missesPath = optStr(args, "misses-out") ?? `${REPORTS_DIR}/misses.${run.prompt_version}.csv`;
+  writeFileSync(missesPath, renderMissesCsv(r0, run.predictions, gold, events) + "\n");
+  const notCaught = r0.goldVerdicts.filter((v) => v.outcome !== "caught").length;
+  console.log(`Wrote ${missesPath} (${r0.goldVerdicts.length} gold rows; ${notCaught} not fully caught)`);
+}
 
 const best = results.reduce((a, b) => (b.metrics.outbound_coverage > a.metrics.outbound_coverage ? b : a)).metrics;
 console.log(`\nVerdict: ${verdict}`);

@@ -79,8 +79,11 @@ confidence thresholds, and emit the report + verdict.
 
 ```bash
 pnpm run evaluate -- --pred data/predictions/predictions.v1.json
+pnpm run evaluate -- --pred data/predictions/predictions.v1.json --dump-misses  # + recall worksheet
 # → data/reports/metrics.v1.md  (precision, coverage, hard/soft coverage, person & due-date
 #   accuracy, duplicate rate, inbound precision/noise-drop, a threshold sweep, and a verdict)
+# → data/reports/misses.v1.csv  (--dump-misses: one row per gold commitment + outcome + segments,
+#   for recall analysis — see "data recall analysis.md")
 ```
 
 The verdict is **PROCEED / FIX / STOP** per mvp.md §7/§18/§19. Build Phase 1 only on PROCEED.
